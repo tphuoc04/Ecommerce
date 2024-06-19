@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-</head>
+<html lang="en">
+    <head th:insert="~{fragments/head (title='Homepage')}"></head>
 <body>
-    <h1>Hello</h1>
+    <div th:insert="~{fragments/header}"></div>
+    <main>
+        Day la Home Page
+
+        <!--List of todo-->
+        <ul th:each="item : ${items}">
+            <li th:replace="~{fragments/list-item :: list-item (title=item.title, description=item.description)}"></li>
+        </ul>
+    </main>
+    <div th:insert="~{fragments/footer}"></div>
 </body>
 </html>
