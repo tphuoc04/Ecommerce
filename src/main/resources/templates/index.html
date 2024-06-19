@@ -8,7 +8,7 @@
 
         <!--List of todo-->
         <ul th:each="item : ${items}">
-            <li th:replace="~{fragments/list-item :: list-item (title=item.title, description=item.description)}"></li>
+            <li th:replace="~{fragments/components/list-item :: list-item (title=${item.title}, description=${item.description})}"></li>
         </ul>
     </main>
     <div th:insert="~{fragments/footer}"></div>
